@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<schema targetNamespace="http://www.dxc.com/TxWithdrawlRequest/" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.dxc.com/TxWithdrawlRequest/">
+    
+    <element name="TxWithdrawal" type="tns:TxWithdrawal" nillable="false" ></element>
+    
+<complexType name="TxWithdrawal">
+<sequence>
+<element name="IndexedData" type="tns:indexedData" minOccurs="1" nillable="false" maxOccurs="1" ></element>
+<element name="WMAData" type="tns:wmaData" minOccurs="1" nillable="false"></element>
+<element name="TranDetails" type="tns:tranDetails" minOccurs="1" nillable="false"></element>
+</sequence>
+</complexType>
+
+<complexType name="indexedData">
+<sequence>
+<element name="PolNumber" type="string" minOccurs="1" nillable="false"></element>
+<element name="FirstName" type="string" minOccurs="1" nillable="false"></element>
+<element name="LastName" type="string" minOccurs="1" nillable="false"></element>
+<element name="GovtID" type="string" minOccurs="1" nillable="false"></element>
+<element name="TransSubType" type="string" minOccurs="1" nillable="false"></element>
+<element name="LineOfBusiness" type="string" minOccurs="1" nillable="false"></element>
+<element name="ProductCode" type="string" minOccurs="1" nillable="false"></element>
+</sequence>
+</complexType>
+
+<complexType name="wmaData">
+<sequence>
+<element name="PolNumber" type="string" minOccurs="1" nillable="false"></element>
+<element name="LoanPaymentIndicator" type="string"  ></element>
+<element name="PremiumPaymentIndicator" type="string"  ></element>
+<element name="Transaction" type="string"  ></element>
+<element name="FinActivityType" type="string" minOccurs="1" nillable="false"></element>
+<element name="FinActivityNetAmt" type="string"  ></element>
+<element name="NOPremiums" type="string"  ></element>
+
+<element name="TransExeDate" type="string"  ></element>
+<element name="PaymentForm" type="string"  ></element>
+<element name="PaymentAmt" type="string"  ></element>
+
+<element name="AddresTypeCode" type="string"  ></element>
+<element name="Line1" type="string"  ></element>
+<element name="City" type="string"  ></element>
+<element name="AddressStateTC" type="string"  ></element>
+<element name="Zip" type="string"  ></element>
+
+<element name="FirstName" type="string"  ></element>
+<element name="LastName" type="string"  ></element>
+<element name="RACFId" type="string"  ></element>
+<element name="TaxWithholdingType" type="string" ></element>
+
+</sequence>
+</complexType>
+
+<complexType name="tranDetails">
+    	<sequence>
+    	    <element name="TransRefGUID" type="string" minOccurs="1"></element>
+    	    <element name="TranID" type="string" maxOccurs="1" minOccurs="1"></element>
+    		<element name="TransExeDate" type="string" minOccurs="1"></element>
+    		<element name="TransExeTime" type="string"  default=""></element>
+    		<element name="TransType" type="string"  default=""></element>
+			<element name="ResultCode" type="string"  maxOccurs="1" minOccurs="1"></element>    		
+    	    <element name="ResultDescription" type="string"></element>    		
+    	</sequence>
+    </complexType>
+
+</schema>
+    
